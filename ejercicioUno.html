@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+</head>
+
+<body>
+
+    <div style="margin: 0 auto;">
+        <video src="y2mate.com - Papoman - No fumes más marihuana_tvSxJvoMnMM_360p.mp4" id="video" style="width: 500px; height: 500px; "></video>
+    </div>
+
+
+    <div>
+        <button id="reversa">Devolver </button>
+        <button id="adelante"> Adelantar </button>
+        <button id="play"> Iniciar </button>
+        <button id="pausa"> Pausar </button>
+        <button id="bajo">-</button>
+        <button id="alto">+</button></div>
+
+
+    <script>
+        let video = document.getElementById('video');
+        let play = document.getElementById('play');
+        let pausar = document.getElementById('pausa');
+        let volume = document.getElementById('alto');
+        let reversa = document.getElementById('reversa');
+        let adelante = document.getElementById('adelante');
+        let bajo = document.getElementById('bajo');
+
+        var initVolume = 0.5
+        var initTime = 0;
+
+        play.addEventListener('click', () => {
+            video.play();
+            video.volume = initVolume;
+        })
+
+        pausar.addEventListener('click', () => {
+            video.pause();
+        })
+
+        alto.addEventListener('click', () => {
+            initVolume += .1;
+            video.volume = initVolume;
+        })
+
+        bajo.addEventListener('click', () => {
+            initVolume -= .1;
+            video.volume = initVolume;
+        })
+
+        adelante.addEventListener('click', () => {
+            var actualTime = video.currentTime;
+            video.currentTime = actualTime + 5;
+        })
+
+        reversa.addEventListener('click', () => {
+            var actualTime = video.currentTime;
+            video.currentTime = actualTime - 5;
+        })
+    </script>
+
+</body>
+
+</html>

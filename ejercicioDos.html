@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creacion de Divs</title>
+    <style>
+        .box {
+            text-align: center;
+            padding: 50px;
+            width: 100px;
+            height: 100px;
+            background: rgb(16, 153, 165);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <button id="agregar">Agregar Div</button>
+        <button id="clear">Eliminar Divs</button>
+        <button id="impares">Quitar impares</button>
+        <input id="divTomado" placeholder="Eliminar un div"></input>
+        <button id="enviar">Enviar</button>
+    </div>
+
+    <div id="boxes">
+    </div>
+
+    <script>
+        var agregar = document.getElementById('agregar');
+        var clear = document.getElementById('clear');
+        var impares = document.getElementById('impares');
+        var divTomado = document.getElementById('divTomado').value;
+        var enviar = document.getElementById("enviar");
+        var cont = 0;
+        var divs = [];
+
+        agregar.addEventListener('click', function() {
+            divs.push(cont + 1);
+            document.getElementById('boxes').innerHTML += `<br> <div class="box" id="${cont + 1}"> <p>${cont + 1}</p> </div> </br>`;
+            cont++;
+        });
+
+        clear.addEventListener('click', function() {
+
+            document.getElementById('boxes').innerHTML = '';
+            cont = 0;
+        });
+
+        impares.addEventListener('click', function() {
+            for (i = 0; i < divs.length; i++) {
+                if (divs[i] % 2 === 1) {
+                    var el = document.getElementById(`${divs[i]}`);
+                    el.remove();
+                    divs.splice(i, 1);
+                };
+            }
+        });
+
+        //No lo pude hacer funcionar :c
+
+        enviar.addEventListener('click', function() {
+            for (i = 0; i < divs.length; i++) {
+                if (numeroDiv === divs[i]) {
+                    divs.splice(i, 1);
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

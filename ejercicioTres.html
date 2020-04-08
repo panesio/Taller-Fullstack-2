@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color</title>
+</head>
+
+<body>
+    <style>
+        div {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            border: black 1px solid;
+        }
+        
+        #amarillo {
+            background: yellow;
+        }
+        
+        #azul {
+            background: blue;
+        }
+        
+        #rojo {
+            background: red;
+        }
+        
+        #verde {
+            background: green;
+        }
+        
+        #morado {
+            background: purple;
+        }
+    </style>
+    </head>
+
+    <body>
+        <div>
+            <div id="amarillo"></div>
+            <div id="azul"></div>
+            <div id="rojo"></div>
+            <div id="verde"></div>
+            <div id="morado"></div>
+        </div>
+
+        <script>
+            document.getElementById('amarillo').addEventListener('click', function() {
+                document.body.style.backgroundColor = "yellow"
+            });
+            document.getElementById('azul').addEventListener('click', function() {
+                document.body.style.background = "blue";
+            });
+            document.getElementById('rojo').addEventListener('click', function() {
+                document.body.style.background = "red";
+            });
+            document.getElementById('verde').addEventListener('click', function() {
+                document.body.style.background = "green";
+            });
+            document.getElementById('morado').addEventListener('click', function() {
+                document.body.style.background = "purple";
+            });
+        </script>
+    </body>
+
+</html>

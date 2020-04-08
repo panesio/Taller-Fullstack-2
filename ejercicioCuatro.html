@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen/Botones</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+
+    <div style="text-align: center;">
+        <img src="halo.jpg" id="img">
+    </div>
+
+    <button id="grande">+</button>
+    <button id="reinicio">Reiniciar Imagen</button>
+    <button id="chico">-</button>
+
+    <script>
+        alert("Primero hay que darle al boton de reinicio")
+
+        var btnGrande = document.getElementById('grande');
+        var btnChico = document.getElementById('chico');
+        var btnReinicio = document.getElementById('reinicio');
+        var img = document.getElementById('img');
+
+
+
+        btnGrande.addEventListener('click', function() {
+            px += 100;
+            img.style.transition = "all 0.8s";
+            img.style.width = `${px}px`;
+        });
+
+        btnChico.addEventListener('click', function() {
+            px -= 100;
+            img.style.transition = "all 0.8s";
+            img.style.width = `${px}px`;
+        });
+
+        btnReinicio.addEventListener('click', function() {
+            px = 1100;
+            img.style.transition = "all 1s";
+            img.style.width = `${px}px`;
+        });
+    </script>
+</body>
+
+</html>
